@@ -1,13 +1,15 @@
 tag: browser
 and not tag: user.rango_disabled
+mode: command
+mode: user.dictation_command
 -
 tag(): user.rango_direct_clicking
 
 # Click
-click <user.rango_target>: user.rango_click_element(rango_target)
+(touch | click) <user.rango_target>: user.rango_click_element(rango_target)
 
 # Mouse click and move
-mouse click <user.rango_target>: user.rango_mouse_click_element(rango_target, 0)
+mouse (touch | click) <user.rango_target>: user.rango_mouse_click_element(rango_target, 0)
 menu <user.rango_target>: user.rango_mouse_click_element(rango_target, 1)
 move to <user.rango_target>: user.rango_mouse_move_to_element(rango_target)
 
@@ -52,10 +54,10 @@ page next: user.rango_navigate_to_next_page()
 page last: user.rango_navigate_to_previous_page()
 
 # Move current tab to a new window
-tab split: user.rango_move_tab_to_new_window()
+tab move window | tab split: user.rango_move_tab_to_new_window()
 
 # Focus previous tab
-tab back: user.rango_focus_previous_tab()
+go tab (last | preev) | tab back: user.rango_focus_previous_tab()
 
 # Focus or create tab from your `talonhub/community` websites.csv
 visit {user.website}: user.rango_focus_or_create_tab_by_url(website)
@@ -170,7 +172,7 @@ pre <user.rango_target>: user.rango_set_selection_before(rango_target)
 post <user.rango_target>: user.rango_set_selection_after(rango_target)
 
 # Clear field
-change <user.rango_target>:
+(clear | change) <user.rango_target>:
   user.rango_clear_input(rango_target)
 
 # Copy current url information
