@@ -144,9 +144,6 @@ right again: user.rango_scroll("repeatLast", "right")
 crown <user.rango_target>: user.rango_snap_scroll(rango_target, "top")
 center <user.rango_target>: user.rango_snap_scroll(rango_target, "center")
 bottom <user.rango_target>: user.rango_snap_scroll(rango_target, "bottom")
-crown <user.text>$: user.rango_snap_scroll_text(text, "top")
-center <user.text>$: user.rango_snap_scroll_text(text, "center")
-bottom <user.text>$: user.rango_snap_scroll_text(text, "bottom")
 
 # Custom scroll positions
 scroll save <user.text>: user.rango_store_scroll_position(text)
@@ -224,12 +221,6 @@ mark <user.rango_target> as <user.text>: user.rango_save_reference(rango_target,
 mark this as <user.text>: user.rango_save_reference_for_active_element(text)
 mark show: user.rango_show_references()
 mark clear <user.text>: user.rango_remove_reference(text)
-
-# Run action by matching the text of an element
-follow <user.text>:
-  user.rango_run_action_on_text_matched_element("clickElement", text, true)
-button <user.text>:
-  user.rango_run_action_on_text_matched_element("clickElement", text, false)
 
 rango explicit: user.rango_force_explicit_clicking()
 rango direct: user.rango_force_direct_clicking()
