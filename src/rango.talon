@@ -48,7 +48,7 @@ tab pin <user.rango_tab_target>: user.rango_pin_tab(rango_tab_target)
 tab unpin <user.rango_tab_target>: user.rango_unpin_tab(rango_tab_target)
 
 # Close tab
-tab close <user.rango_tab_target>: user.rango_close_tab(rango_tab_target)
+tab (close | clothes) <user.rango_tab_target>: user.rango_close_tab(rango_tab_target)
 
 # Open in a new tab
 blank <user.rango_target>: user.rango_open_in_new_tab(rango_target)
@@ -74,13 +74,13 @@ tab ahead: user.rango_cycle_tabs_by_text(1)
 tab behind: user.rango_cycle_tabs_by_text(-1)
 
 # Close tabs
-tab close other: user.rango_close_other_tabs()
-tab close left: user.rango_close_tabs_to_left()
-tab close right: user.rango_close_tabs_to_right()
-tab close first [<number_small>]: user.rango_close_tabs_left_end(number_small or 1)
-tab close final [<number_small>]: user.rango_close_tabs_right_end(number_small or 1)
-tab close previous [<number_small>]: user.rango_close_previous_tabs(number_small or 1)
-tab close next [<number_small>]: user.rango_close_next_tabs(number_small or 1)
+tab (close | clothes) other: user.rango_close_other_tabs()
+tab (close | clothes) left: user.rango_close_tabs_to_left()
+tab (close | clothes) right: user.rango_close_tabs_to_right()
+tab (close | clothes) first [<number_small>]: user.rango_close_tabs_left_end(number_small or 1)
+tab (close | clothes) final [<number_small>]: user.rango_close_tabs_right_end(number_small or 1)
+tab (close | clothes) previous [<number_small>]: user.rango_close_previous_tabs(number_small or 1)
+tab (close | clothes) next [<number_small>]: user.rango_close_next_tabs(number_small or 1)
 
 # Clone tab
 tab clone: user.rango_clone_current_tab()
