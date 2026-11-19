@@ -1,7 +1,5 @@
 tag: browser
 and not tag: user.rango_disabled
-mode: command
-mode: user.dictation_command
 -
 tag(): user.rango_direct_clicking
 
